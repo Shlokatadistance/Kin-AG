@@ -1,0 +1,318 @@
+import React, { Component } from "react";
+import { StyleSheet, View, Image, Text, TouchableOpacity } from "react-native";
+
+function ClientProfile(props) {
+  return (
+    <View style={styles.container}>
+      <View style={styles.rect1}>
+        <View style={styles.imageRow}>
+          <Image
+            source={require("./jag.png")}
+            resizeMode="cover"
+            style={styles.image}
+          ></Image>
+          <Text style={styles.clientName}>SHLOK SINHA</Text>
+        </View>
+      </View>
+      <Text style={styles.phoneNumberEmail}>
+        Phone Number : +65 1234567{"\n"}Email: user12@test.com{"\n"}Status: Sessions Pending.
+      </Text>
+      <View style={styles.rect2}></View>
+      <View style={styles.texxtStack}>
+        <Text style={styles.texxt}>
+          Pending Activities: {"\n"}
+          {"\n"}
+          {"\n"}Notes: Application in processing stage.
+        </Text>
+        <TouchableOpacity
+          onPress={() => props.navigation.navigate("ClientScheduling")}
+          style={styles.button}
+        ></TouchableOpacity>
+        <Text style={styles.seeTimeline}>See Timeline</Text>
+      </View>
+      <View style={styles.texxt2Stack}>
+        <Text style={styles.texxt2}></Text>
+        <Text style={styles.documents}>Documents</Text>
+      </View>
+      <View style={styles.rect3}></View>
+      <TouchableOpacity style={styles.button1}>
+        <Text style={styles.passport}>Passport</Text>
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.button2}>
+        <Text style={styles.nric}>NRIC</Text>
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.button3}>
+        <Text style={styles.incomeDocuments}>Income Documents</Text>
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.button4}>
+        <Text style={styles.otherDocuments}>Other Documents</Text>
+      </TouchableOpacity>
+      <View style={styles.button5Stack}>
+        <TouchableOpacity style={styles.button5}></TouchableOpacity>
+        <Text style={styles.editDetails}>Edit Details</Text>
+      </View>
+      <View style={styles.button6Stack}>
+        <TouchableOpacity
+          onPress={() => props.navigation.navigate("ClientsPage")}
+          style={styles.button6}
+        ></TouchableOpacity>
+        <Text style={styles.back}>Back</Text>
+      </View>
+      <Image
+        source={require("./nhcs.png")}
+        resizeMode="contain"
+        style={styles.image1}
+      ></Image>
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1
+  },
+  rect1: {
+    width: 420,
+    height: 78,
+    backgroundColor: "rgb(178,97,179)",
+    borderWidth: 1,
+    borderColor: "#000000",
+    flexDirection: "row",
+    marginTop: 104,
+    alignSelf: "center"
+  },
+  image: {
+    width: 52,
+    height: 51,
+    borderRadius: 100
+  },
+  clientName: {
+    fontFamily: "roboto-700",
+    fontWeight:'bold',
+    color: "rgb(255,255,255)",
+    height: 37,
+    width: 136,
+    fontSize: 20,
+    marginLeft: 67,
+    marginTop: 13
+  },
+  imageRow: {
+    height: 51,
+    flexDirection: "row",
+    flex: 1,
+    marginRight: 107,
+    marginLeft: 13,
+    marginTop: 11
+  },
+  phoneNumberEmail: {
+    fontFamily: "roboto-regular",
+    color: "#121212",
+    height: 74,
+    width: 223,
+    marginTop: 38,
+    marginLeft: 13
+  },
+  rect2: {
+    width: 420,
+    height: 1,
+    backgroundColor: "#E6E6E6",
+    borderWidth: 1,
+    borderColor: "#000000",
+    marginTop: 14
+  },
+  texxt: {
+    top: 1,
+    left: 0,
+    position: "absolute",
+    fontFamily: "roboto-regular",
+    color: "#121212",
+    height: 62,
+    width: 307
+  },
+  button: {
+    top: 1,
+    left: 122,
+    width: 132,
+    height: 14,
+    position: "absolute",
+    borderWidth: 0,
+    borderColor: "#000000"
+  },
+  seeTimeline: {
+    top: 0,
+    left: 138,
+    position: "absolute",
+    fontFamily: "roboto-700",
+    color: "rgba(74,144,226,1)",
+    height: 14,
+    width: 127
+  },
+  texxtStack: {
+    width: 307,
+    height: 63,
+    marginTop: 34,
+    marginLeft: 13
+  },
+  texxt2: {
+    top: 0,
+    left: 95,
+    position: "absolute",
+    fontFamily: "roboto-regular",
+    color: "#121212",
+    height: 33,
+    width: 68
+  },
+  documents: {
+    top: 11,
+    left: 0,
+    position: "absolute",
+    fontFamily: "roboto-regular",
+    fontWeight:'bold',
+    color: "#121212",
+    height: 22,
+    width: 153
+  },
+  texxt2Stack: {
+    width: 163,
+    height: 33,
+    marginTop: 68,
+    marginLeft: 15
+  },
+  rect3: {
+    width: 420,
+    height: 2,
+    backgroundColor: "#E6E6E6",
+    borderWidth: 1,
+    borderColor: "#000000",
+    marginTop: -46
+  },
+  button1: {
+    width: 248,
+    height: 33,
+    borderWidth: 0,
+    borderColor: "#000000",
+    backgroundColor: "rgb(127,46,128)",
+    marginTop: 58,
+    marginLeft: 63
+  },
+  passport: {
+    fontFamily: "roboto-700",
+    color: "#FFFFFF",
+    height: 24,
+    width: 168,
+    fontSize: 20,
+    marginTop: 4,
+    marginLeft: 54
+  },
+  button2: {
+    width: 248,
+    height: 33,
+    borderWidth: 0,
+    borderColor: "#000000",
+    backgroundColor: "rgb(127,46,128)",
+    marginTop: 22,
+    marginLeft: 63
+  },
+  nric: {
+    fontFamily: "roboto-700",
+    color: "#FFFFFF",
+    height: 24,
+    width: 168,
+    fontSize: 20,
+    marginTop: 5,
+    marginLeft: 67
+  },
+  button3: {
+    width: 248,
+    height: 33,
+    borderWidth: 0,
+    borderColor: "#000000",
+    backgroundColor: "rgb(127,46,128)",
+    marginTop: 30,
+    marginLeft: 65
+  },
+  incomeDocuments: {
+    fontFamily: "roboto-700",
+    color: "#FFFFFF",
+    height: 29,
+    width: 186,
+    fontSize: 20,
+    marginTop: 2,
+    marginLeft: 17
+  },
+  button4: {
+    width: 248,
+    height: 33,
+    borderWidth: 0,
+    borderColor: "#000000",
+    backgroundColor: "rgb(127,46,128)",
+    marginTop: 18,
+    marginLeft: 63
+  },
+  otherDocuments: {
+    fontFamily: "roboto-700",
+    color: "#FFFFFF",
+    height: 24,
+    width: 168,
+    fontSize: 20,
+    marginLeft: 30
+  },
+  button5: {
+    top: 0,
+    left: 0,
+    width: 123,
+    height: 36,
+    position: "absolute",
+    borderWidth: 0,
+    borderColor: "#000000",
+    backgroundColor: "rgb(127,46,128)"
+  },
+  editDetails: {
+    top: 10,
+    left: 23,
+    position: "absolute",
+    fontFamily: "roboto-700",
+    color: "#FFFFFF",
+    height: 15,
+    width: 108
+  },
+  button5Stack: {
+    width: 131,
+    height: 36,
+    marginTop: 14,
+    marginLeft: 128
+  },
+  button6: {
+    top: 0,
+    left: 10,
+    width: 90,
+    height: 20,
+    position: "absolute",
+    backgroundColor: "rgb(127,46,128)",
+    borderWidth: 0,
+    borderColor: "#000000"
+  },
+  back: {
+    top: 0,
+    left: 40,
+    position: "absolute",
+    fontFamily: "roboto-700",
+    color: "#FFFFFF",
+    height: 20,
+    width: 108
+  },
+  button6Stack: {
+    width: 138,
+    height: 20,
+    marginTop: -586,
+    marginLeft: 130
+  },
+  image1: {
+    width: 94,
+    height: 68,
+    marginTop: -172,
+    marginLeft: 150
+  }
+});
+
+export default ClientProfile;
